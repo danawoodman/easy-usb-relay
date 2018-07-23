@@ -7,13 +7,13 @@
 ## Setup
 
 ```bash
-npm install --save usbrelay
+npm install --save easy-usb-relay
 ```
 
 ## Usage
 
 ```js
-const { Board } = require('usbrelay')
+const { Board } = require('easy-usb-relay')
 
 const numRelays = 2
 const relays = new Board(numRelays)
@@ -31,7 +31,7 @@ relays.on(1)
 relays.off(1)
 ```
 
-Please see [examples directory](/examples) for more examples on using `usbrelay`
+Please see [examples directory](/examples) for more examples on using `easy-usb-relay`
 
 ## API
 
