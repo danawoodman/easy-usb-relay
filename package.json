@@ -2,13 +2,13 @@
   "name": "easy-usb-relay",
   "version": "0.0.3",
   "description": "A simple USB relay support library",
-  "main": "src/relay.js",
+  "main": "src/relays.js",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "github.com/danawoodman/usbrelay"
+    "url": "github.com/danawoodman/easy-usb-relay"
   },
   "keywords": [
     "usb",
