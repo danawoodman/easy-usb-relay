@@ -1,6 +1,6 @@
 {
   "name": "usbrelay",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A USB relay support library",
   "main": "src/relay.js",
   "scripts": {
