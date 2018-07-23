@@ -1,6 +1,6 @@
 {
   "name": "easy-usb-relay",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A simple USB relay support library",
   "main": "src/relays.js",
   "scripts": {
