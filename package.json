@@ -1,0 +1,39 @@
+{
+  "name": "usbrelay",
+  "version": "0.0.1",
+  "description": "A USB relay support library",
+  "main": "src/relay.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/danawoodman/usbrelay"
+  },
+  "keywords": [
+    "usb",
+    "relay",
+    "arduino",
+    "rpi",
+    "raspberry",
+    "pi",
+    "linux",
+    "switch",
+    "control",
+    "iot",
+    "electronics",
+    "diy"
+  ],
+  "author": "Dana Woodman <dana@danawoodman.com> (http://danawoodman.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "node-hid": "0.7.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "8.2.6",
+    "eslint": "5.1.0",
+    "jest": "23.4.1",
+    "nodemon": "1.18.3",
+    "prettier": "1.13.7"
+  }
+}
