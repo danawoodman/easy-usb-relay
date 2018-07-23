@@ -1,4 +1,4 @@
-# usbrelay
+# easy-usb-relay
 
 **THIS IS CURRENTLY IN AN EXPERIMENTAL STATE:** It does not yet support multiple boards or other manufacturers. Coming soon...
 

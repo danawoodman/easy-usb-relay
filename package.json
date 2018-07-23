@@ -1,7 +1,7 @@
 {
-  "name": "usbrelay",
+  "name": "easy-usb-relay",
   "version": "0.0.2",
-  "description": "A USB relay support library",
+  "description": "A simple USB relay support library",
   "main": "src/relay.js",
   "scripts": {
     "test": "jest"
@@ -13,6 +13,7 @@
   "keywords": [
     "usb",
     "relay",
+    "sainsmart",
     "arduino",
     "rpi",
     "raspberry",
