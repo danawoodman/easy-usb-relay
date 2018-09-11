@@ -69,14 +69,17 @@ class Board {
   }
 
   allOn() {
-    this.trigger([ALL_ON])
+    this.trigger([ALL_ON, 0])
   }
 
   allOff() {
-    this.trigger([ALL_OFF])
+    this.trigger([ALL_OFF, 0])
   }
 
   trigger(state) {
+    if (state.length != 2) {
+      throw new Error('easy-usb-relay library error: exactly two arguments required for trigger function.')
+    }
     this.logState()
     this.board.sendFeatureReport(state)
   }
