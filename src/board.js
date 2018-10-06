@@ -18,7 +18,7 @@ const PRODUCT_ID = 1503
 const itob = num => Number(parseInt(num, 10).toString(2))
 
 class Board {
-  constructor(numRelays = 1, debug = true) {
+  constructor(numRelays = 1, debug = false) {
     if (debug) console.log('NUMBER OF RELAYS:', numRelays)
 
     this.debug = debug
@@ -26,17 +26,25 @@ class Board {
     this.numRelays = numRelays
     this.relays = Array.from(Array(this.numRelays).keys())
 
-    this.board = new HID.HID(VENDOR_ID, PRODUCT_ID)
-    if (!this.board) throw new Error('No device found!')
-
-    this.board.on('data', data => console.log('DATA:', data))
-    this.board.on('error', error => console.error('ERROR:', error))
-
     this.logState()
   }
 
+  loadBoard() {
+    this.board = new HID.HID(VENDOR_ID, PRODUCT_ID)
+    if (!this.board) throw new Error('No device found!')
+
+    //this.board.on('data', data => console.log('DATA:', data))
+    //this.board.on('error', error => console.error('ERROR:', error))
+  }
+
+  unloadBoard() {
+    this.board.close()
+  }
+
   getState() {
+    this.loadBoard()
     const binaryState = itob(this.board.getFeatureReport(1, 8)[7])
+    this.unloadBoard()
     const state = String(binaryState)
       .split('')
       .map(Number)
@@ -78,10 +86,12 @@ class Board {
 
   trigger(state) {
     if (state.length != 2) {
-      throw new Error('easy-usb-relay library error: exactly two arguments required for trigger function.')
+       throw new Error('easy-usb-relay library error: exactly two arguments required for trigger function.')
     }
     this.logState()
+    this.loadBoard()
     this.board.sendFeatureReport(state)
+    this.unloadBoard()
   }
 }
 
